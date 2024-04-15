@@ -42,6 +42,8 @@ if CLIENT then
 
   hook.Add('TTTPrepareRound', 'TTT2ResetBodyGuardValues', function()
     local ply = LocalPlayer()
+    if not IsValid(ply) then return end
+
     ply:SetNWEntity('guarding_player', nil)
   end)
 
